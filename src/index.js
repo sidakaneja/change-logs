@@ -1,13 +1,6 @@
-import http from 'node:http'
+import app from './server.js'
 
+const port = 3000
 
-const server = http.createServer(async (req, res) => {
-	if (req.method === 'GET' && req.url === '/') {
-		res.statusCode = 200;
-		res.end();
-	}
-})
+app.listen(port, () => console.log(`listening on localhost:${port}`))
 
-server.listen(3000, () => {
-	console.log("starting server on http://localhost:3000");
-})
